@@ -2,6 +2,7 @@ import express from "express";
 import BlogPost from "../models/BlogPost.js";
 
 const blogPostRoutes = express.Router();
+
 const getBlogPostByCategory = async (req, res) => {
   const { category, pageNumber } = req.params;
   const posts = await BlogPost.find({});
@@ -24,6 +25,16 @@ const getBlogPostByCategory = async (req, res) => {
   }
 };
 
+const getBlogPost = async (req, res) => {
+  const blogPost = await BlogPost.findById(req.params.id);
+  if (blogPost) {
+    res.json(blogPost);
+  } else {
+    res.status(404).send("Blog Post not found.");
+  }
+};
+
+blogPostRoutes.route("/post/:id").get(getBlogPost);
 blogPostRoutes.route("/:category/:pageNumber").get(getBlogPostByCategory);
 
 export default blogPostRoutes;
