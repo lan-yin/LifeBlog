@@ -20,6 +20,14 @@ app.use(
 
 app.use("/api/blog-posts", blogPostRoutes);
 
+app.get("/api/config/emailjs", (req, res) =>
+  res.send({
+    template_id: process.env.TEMPLATE_ID,
+    service_id: process.env.SERVICE_ID,
+    public_key: process.env.PUBLIC_KEY,
+  })
+);
+
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
