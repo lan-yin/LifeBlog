@@ -55,7 +55,7 @@ const EditBlogPostTab = () => {
     <>
       <VStack spacing="30px" size="8xl">
         {error && (
-          <Alert status="='error">
+          <Alert status='error'>
             <AlertIcon />
             <AlertTitle>We are sorry!</AlertTitle>
             <AlertDescription>{error}</AlertDescription>
