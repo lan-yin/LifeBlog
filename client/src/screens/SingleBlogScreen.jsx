@@ -27,6 +27,7 @@ const SingleBlogScreen = () => {
   const dispatch = useDispatch(); // initiate redux dispatcher, make actual requestment
 
   useEffect(() => {
+    window.scroll(0, 0);
     dispatch(getBlogPost(id));
   }, [id]);
 
@@ -51,8 +52,9 @@ const SingleBlogScreen = () => {
             <Flex width="full" py="2" justifyContent="center" px="2">
               <Text>By {blogPost.author}</Text>
               <Text mx="2">|</Text>
-              <Text>{new Date(blogPost.createdAt).toDateString() + blogPost.category.slice(1)}</Text>
+              <Text>{new Date(blogPost.createdAt).toDateString()}</Text>
               <Text mx="2">|</Text>
+              <Text>{blogPost.category.charAt(0).toUpperCase() + blogPost.category.slice(1)}</Text>
             </Flex>
             <Stack p="2">
               <Image src={blogPost.image} />

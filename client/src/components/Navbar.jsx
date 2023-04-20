@@ -57,6 +57,9 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const [logoHover, setLogoHover] = useState(false);
 
+  const user = useSelector((state) => state.user);
+  const { userInfo } = user;
+
   return (
     <Box bg={mode("blue.200", "blue.900")} px={4}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
@@ -76,7 +79,7 @@ const Navbar = () => {
             onMouseLeave={() => setLogoHover(false)}
           >
             <Flex alignItems="center">
-              <Icon as={GiWorld} mr='2' h="10" w="10" color={logoHover ? "gray.200" : mode("gray.600", "gray.400")} />
+              <Icon as={GiWorld} mr="2" h="10" w="10" color={logoHover ? "gray.200" : mode("gray.600", "gray.400")} />
               <Text fontWeight="extrabold" color={mode("gray.600", "gray.400")}>
                 TravelLenzo
               </Text>
@@ -100,6 +103,11 @@ const Navbar = () => {
                 ))}
               </MenuList>
             </Menu>
+            {userInfo && (
+              <Link as={ReactLink} to="/admin-console">
+                <MdAdminPanelSettings size="30" />
+              </Link>
+            )}
           </HStack>
         </HStack>
         <HStack>
@@ -127,7 +135,14 @@ const Navbar = () => {
             ))}
           </Stack>
           <Menu>
-            <MenuButton textAlign='left' w='full' fontWeight="semibold" mt='3' p="2" _hover={{ bg: mode("blue.100", "blue.800") }}>
+            <MenuButton
+              textAlign="left"
+              w="full"
+              fontWeight="semibold"
+              mt="3"
+              p="2"
+              _hover={{ bg: mode("blue.100", "blue.800") }}
+            >
               Blog
             </MenuButton>
             <MenuList>
@@ -138,7 +153,12 @@ const Navbar = () => {
               ))}
             </MenuList>
           </Menu>
-          <ButtonGroup spacing="0" variant="ghost" mb='3' mt='5' >
+          {userInfo && (
+            <Link as={ReactLink} to="/admin-console">
+              <MdAdminPanelSettings size="30" />
+            </Link>
+          )}
+          <ButtonGroup spacing="0" variant="ghost" mb="3" mt="5">
             <IconButton as="a" href="#" icon={<FaFacebook fontSize="1.25rem" />} />
             <IconButton as="a" href="#" icon={<FaTwitter fontSize="1.25rem" />} />
             <IconButton as="a" href="#" icon={<FaYoutube fontSize="1.25rem" />} />

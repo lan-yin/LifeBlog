@@ -5,6 +5,7 @@ import express from "express";
 
 // our Routes
 import blogPostRoutes from "./routes/blogPostRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 db();
 const app = express();
@@ -19,6 +20,7 @@ app.use(
 );
 
 app.use("/api/blog-posts", blogPostRoutes);
+app.use("/api/users", userRoutes);
 
 app.get("/api/config/emailjs", (req, res) =>
   res.send({
