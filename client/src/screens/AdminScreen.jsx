@@ -2,6 +2,7 @@ import { Box, Stack, Heading, Tab, Tabs, TabList, TabPanels, TabPanel } from "@c
 import { Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import NewPostTab from "../components/NewPostTab";
+import EditBlogPostTab from "../components/EditBlogPostTab";
 
 const AdminScreen = () => {
   const user = useSelector((state) => state.user);
@@ -21,8 +22,12 @@ const AdminScreen = () => {
               <Tab>Edit Blog Post</Tab>
             </TabList>
             <TabPanels>
-              <TabPanel><NewPostTab /></TabPanel>
-              <TabPanel>{/* <EditBlogPostTab /> */}</TabPanel>
+              <TabPanel>
+                <NewPostTab />
+              </TabPanel>
+              <TabPanel>
+                <EditBlogPostTab />
+              </TabPanel>
             </TabPanels>
           </Tabs>
         </Stack>
