@@ -27,13 +27,13 @@ const HomeScreen = () => (
       >
         <Stack spacing={{ base: "8", lg: "10" }}>
           <Stack spacing={{ base: "2", lg: "4" }}>
-            <Flex>
-              <Icon as={GiWorld} h="12" w="12" color="blue.500" />
+            <Flex alignItems="center">
+              <Icon as={GiWorld} h="12" w="12" color="blue.500" mr="2" />
               <Text fintSize="4xl" fontWeight="bold">
                 TravelLenzo
               </Text>
             </Flex>
-            <Heading fontWeight="normal" size={{ base: "md", md: "lg" }} color="gray.400">
+            <Heading fontWeight="normal" size={{ base: "md", md: "lg" }} color="gray.500">
               <span style={{ fontWeight: "bold" }}>Travel is my life.</span> Since 2024, I've been travelling aaround
               the world nonstop. If you also love to travel, you're in right place.
             </Heading>
@@ -48,7 +48,13 @@ const HomeScreen = () => (
             <Icon color="blue.500" as={FaArrowRight} />
           </HStack>
           <HStack spacing="3">
-            <Link color={useColorModeValue("red.500", "red.300")} fontWeight="bold" fontSize="lg">
+            <Link
+              as={ReactLink}
+              to="https://www.discovery.com/"
+              color={useColorModeValue("red.500", "red.300")}
+              fontWeight="bold"
+              fontSize="lg"
+            >
               Discover now
             </Link>
             <Icon color={useColorModeValue("red.500", "red.300")} as={FaArrowRight} />

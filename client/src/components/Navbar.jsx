@@ -15,12 +15,12 @@ import {
   MenuList,
   MenuButton,
   ButtonGroup,
-  textDecoration,
 } from "@chakra-ui/react";
 import { Link as ReactLink } from "react-router-dom";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { GiWorld } from "react-icons/gi";
-import { FaTwitter, FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaMedium, FaFacebook, FaGithub } from "react-icons/fa";
+import { SiNetlify } from "react-icons/si";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { MdAdminPanelSettings } from "react-icons/md";
@@ -112,10 +112,14 @@ const Navbar = () => {
         </HStack>
         <HStack>
           <ButtonGroup spacing="0" variant="ghost" mr="3" display={{ base: "none", md: "flex" }}>
-            <IconButton as="a" href="#" icon={<FaFacebook fontSize="1.25rem" />} />
-            <IconButton as="a" href="#" icon={<FaTwitter fontSize="1.25rem" />} />
-            <IconButton as="a" href="#" icon={<FaYoutube fontSize="1.25rem" />} />
-            <IconButton as="a" href="#" icon={<FaInstagram fontSize="1.25rem" />} />
+            <IconButton as="a" href="https://github.com/lan-yin" icon={<FaGithub fontSize="1.25rem" />} />
+            <IconButton
+              as="a"
+              href="https://www.facebook.com/LanYinLu?mibextid=LQQJ4d"
+              icon={<FaFacebook fontSize="1.25rem" />}
+            />
+            <IconButton as="a" href="https://lanyinmade.medium.com/" icon={<FaMedium fontSize="1.25rem" />} />
+            <IconButton as="a" href="https://lenzolu.netlify.app/" icon={<SiNetlify fontSize="1.25rem" />} />
           </ButtonGroup>
           <Icon
             cursor="pointer"
@@ -159,10 +163,14 @@ const Navbar = () => {
             </Link>
           )}
           <ButtonGroup spacing="0" variant="ghost" mb="3" mt="5">
-            <IconButton as="a" href="#" icon={<FaFacebook fontSize="1.25rem" />} />
-            <IconButton as="a" href="#" icon={<FaTwitter fontSize="1.25rem" />} />
-            <IconButton as="a" href="#" icon={<FaYoutube fontSize="1.25rem" />} />
-            <IconButton as="a" href="#" icon={<FaInstagram fontSize="1.25rem" />} />
+            <IconButton as="a" href="https://github.com/lan-yin" icon={<FaGithub fontSize="1.25rem" />} />
+            <IconButton
+              as="a"
+              href="https://www.facebook.com/LanYinLu?mibextid=LQQJ4d"
+              icon={<FaFacebook fontSize="1.25rem" />}
+            />
+            <IconButton as="a" href="https://lanyinmade.medium.com/" icon={<FaMedium fontSize="1.25rem" />} />
+            <IconButton as="a" href="https://lenzolu.netlify.app/" icon={<SiNetlify fontSize="1.25rem" />} />
           </ButtonGroup>
         </Box>
       ) : null}

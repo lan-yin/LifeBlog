@@ -13,7 +13,8 @@ import {
   Icon,
   useToast,
 } from "@chakra-ui/react";
-import { FaGithub, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaMedium, FaFacebook } from "react-icons/fa";
+import { SiNetlify } from "react-icons/si";
 import { GiWorld } from "react-icons/gi";
 import { Link as ReactLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -64,7 +65,7 @@ const Footer = () => {
               <Text fontSize="sm" fontWeight="semibold" color="subtle">
                 Stay up to date
               </Text>
-              <Stack spacing="4" direction={{ base: "column", sm:'row' }} maxW={{ lg: "360px" }}>
+              <Stack spacing="4" direction={{ base: "column", sm: "row" }} maxW={{ lg: "360px" }}>
                 <Input placeholder="Enter your email." type="email" required />
                 <Button variant="primary" type="submit" flexShrink={0}>
                   Suscribe
@@ -88,10 +89,10 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} TravelLenzo, Inc. All rights reserved.
           </Text>
           <ButtonGroup variant="ghost">
-            <IconButton as="a" href="#" icon={<FaGithub />} />
-            <IconButton as="a" href="#" icon={<FaTwitter />} />
-            <IconButton as="a" href="#" icon={<FaFacebook />} />
-            <IconButton as="a" href="#" icon={<FaInstagram />} />
+            <IconButton as="a" href="https://github.com/lan-yin" icon={<FaGithub />} />
+            <IconButton as="a" href="https://www.facebook.com/LanYinLu?mibextid=LQQJ4d" icon={<FaFacebook />} />
+            <IconButton as="a" href="https://lanyinmade.medium.com/" icon={<FaMedium />} />
+            <IconButton as="a" href="https://lenzolu.netlify.app/" icon={<SiNetlify />} />
           </ButtonGroup>
         </Stack>
       </Container>
