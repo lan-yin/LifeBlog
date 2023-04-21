@@ -56,7 +56,7 @@ const HomeScreen = () => (
         </Stack>
       </Box>
       <Flex flex="1" overflow="hidden">
-        <Image src="../public/images/landing.jpg" alt="Lovely Image" maxH="550px" minW="300px" objectFit="cover" flex="1" />
+        <Image src="/images/landing.jpg" alt="Lovely Image" maxH="550px" minW="300px" objectFit="cover" flex="1" />
       </Flex>
     </Stack>
   </Box>
